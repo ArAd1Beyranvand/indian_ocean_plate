@@ -46,8 +46,18 @@ abstract final class CocosKeelingIslandsPlates {
     panel: const PlatePanel(box: PlateBox(0, 0, 0, 0)),
     noPanel: true,
     slots: <PlateSlot>[
-      _field(CocosKeelingIslandsAlphabets.letters, _Layout.letterLeft, _Layout.letterRight, 1),
-      _field(CocosKeelingIslandsAlphabets.digits, _Layout.serialLeft, _Layout.serialRight, 3),
+      _field(
+        CocosKeelingIslandsAlphabets.letters,
+        _Layout.letterLeft,
+        _Layout.letterRight,
+        1,
+      ),
+      _field(
+        CocosKeelingIslandsAlphabets.digits,
+        _Layout.serialLeft,
+        _Layout.serialRight,
+        3,
+      ),
     ],
     textGroups: const <PlateTextGroup>[
       PlateTextGroup(<int>[0], key: 'letters'),
@@ -67,14 +77,18 @@ abstract final class CocosKeelingIslandsPlates {
     ],
     decals: const <PlateDecal>[
       PlateDecal(
-        drawing: PlateDrawing(_Layout.diamondHalfW * 2, _Layout.diamondHalfH * 2, <PlateShape>[
-          PlatePolygonShape(<Offset>[
-            Offset(0, _Layout.diamondHalfH),
-            Offset(_Layout.diamondHalfW, 0),
-            Offset(_Layout.diamondHalfW * 2, _Layout.diamondHalfH),
-            Offset(_Layout.diamondHalfW, _Layout.diamondHalfH * 2),
-          ], CocosKeelingIslandsColors.ink),
-        ]),
+        drawing: PlateDrawing(
+          _Layout.diamondHalfW * 2,
+          _Layout.diamondHalfH * 2,
+          <PlateShape>[
+            PlatePolygonShape(<Offset>[
+              Offset(0, _Layout.diamondHalfH),
+              Offset(_Layout.diamondHalfW, 0),
+              Offset(_Layout.diamondHalfW * 2, _Layout.diamondHalfH),
+              Offset(_Layout.diamondHalfW, _Layout.diamondHalfH * 2),
+            ], CocosKeelingIslandsColors.ink),
+          ],
+        ),
         box: PlateBox(
           _Layout.diamondCx - _Layout.diamondHalfW,
           _Layout.diamondCy - _Layout.diamondHalfH,
@@ -89,11 +103,20 @@ abstract final class CocosKeelingIslandsPlates {
 
   /// One field of [length] glyphs spanning [left]..[right]; the spacing brings
   /// the font's ~0.6 em advance up to the printed pitch.
-  static PlateSlot _field(PlateAlphabet alphabet, double left, double right, int length) =>
-      PlateSlot(
-        alphabet: alphabet,
-        box: PlateBox(left, _Layout.cy - _Layout.box / 2, right - left, _Layout.box),
-        length: length,
-        spacing: max(0, (right - left) / length - 0.6 * 0.72 * _Layout.box),
-      );
+  static PlateSlot _field(
+    PlateAlphabet alphabet,
+    double left,
+    double right,
+    int length,
+  ) => PlateSlot(
+    alphabet: alphabet,
+    box: PlateBox(
+      left,
+      _Layout.cy - _Layout.box / 2,
+      right - left,
+      _Layout.box,
+    ),
+    length: length,
+    spacing: max(0, (right - left) / length - 0.6 * 0.72 * _Layout.box),
+  );
 }

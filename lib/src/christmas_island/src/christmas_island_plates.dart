@@ -1,7 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:plate_core/plate_core.dart';
 
-import 'package:plate_alphabet/plate_alphabet.dart' show ChristmasIslandAlphabets;
+import 'package:plate_alphabet/plate_alphabet.dart'
+    show ChristmasIslandAlphabets;
 
 import 'christmas_island_country.dart';
 
@@ -73,20 +74,31 @@ abstract final class ChristmasIslandPlates {
     PlateTextGroup(<int>[1], key: 'serial'),
   ];
 
-  static PlateSlot _letters(double left, double width, double top, double h) => PlateSlot(
-    alphabet: ChristmasIslandAlphabets.letters,
-    box: PlateBox(left, top, width, h),
-    length: 2,
-  );
+  static PlateSlot _letters(double left, double width, double top, double h) =>
+      PlateSlot(
+        alphabet: ChristmasIslandAlphabets.letters,
+        box: PlateBox(left, top, width, h),
+        length: 2,
+      );
 
-  static PlateSlot _digits(double left, double width, double top, double h) => PlateSlot(
-    alphabet: ChristmasIslandAlphabets.digits,
-    box: PlateBox(left, top, width, h),
-    length: 4,
-  );
+  static PlateSlot _digits(double left, double width, double top, double h) =>
+      PlateSlot(
+        alphabet: ChristmasIslandAlphabets.digits,
+        box: PlateBox(left, top, width, h),
+        length: 4,
+      );
 
-  static PlateLabel _line(String text, double cx, double cy, double width, double glyph) =>
-      PlateLabel(text: text, box: PlateBox(cx - width / 2, cy - 9, width, 18), glyphHeight: glyph);
+  static PlateLabel _line(
+    String text,
+    double cx,
+    double cy,
+    double width,
+    double glyph,
+  ) => PlateLabel(
+    text: text,
+    box: PlateBox(cx - width / 2, cy - 9, width, 18),
+    glyphHeight: glyph,
+  );
 
   static final PlateSpec standard = PlateSpec(
     id: 'cx.standard',
@@ -96,8 +108,18 @@ abstract final class ChristmasIslandPlates {
     noPanel: true,
     panel: const PlatePanel(box: PlateBox(0, 0, 0, _Layout.height)),
     slots: <PlateSlot>[
-      _letters(_Layout.gLettersLeft, _Layout.gLettersWidth, _Layout.gSlotTop, _Layout.gSlotHeight),
-      _digits(_Layout.gDigitsLeft, _Layout.gDigitsWidth, _Layout.gSlotTop, _Layout.gSlotHeight),
+      _letters(
+        _Layout.gLettersLeft,
+        _Layout.gLettersWidth,
+        _Layout.gSlotTop,
+        _Layout.gSlotHeight,
+      ),
+      _digits(
+        _Layout.gDigitsLeft,
+        _Layout.gDigitsWidth,
+        _Layout.gSlotTop,
+        _Layout.gSlotHeight,
+      ),
     ],
     labels: <PlateLabel>[
       PlateLabel(
@@ -122,8 +144,18 @@ abstract final class ChristmasIslandPlates {
     noPanel: true,
     panel: const PlatePanel(box: PlateBox(0, 0, 0, _Layout.height)),
     slots: <PlateSlot>[
-      _letters(_Layout.yLettersLeft, _Layout.yLettersWidth, _Layout.ySlotTop, _Layout.ySlotHeight),
-      _digits(_Layout.yDigitsLeft, _Layout.yDigitsWidth, _Layout.ySlotTop, _Layout.ySlotHeight),
+      _letters(
+        _Layout.yLettersLeft,
+        _Layout.yLettersWidth,
+        _Layout.ySlotTop,
+        _Layout.ySlotHeight,
+      ),
+      _digits(
+        _Layout.yDigitsLeft,
+        _Layout.yDigitsWidth,
+        _Layout.ySlotTop,
+        _Layout.ySlotHeight,
+      ),
     ],
     labels: <PlateLabel>[
       _line(
@@ -144,7 +176,10 @@ abstract final class ChristmasIslandPlates {
     // A crab and whale shark over a sun: an emblem, not boxes and text.
     decals: const <PlateDecal>[
       PlateDecal(
-        image: AssetImage('assets/christmas_island/ci_emblem.png', package: 'indian_ocean_plate'),
+        image: AssetImage(
+          'assets/christmas_island/ci_emblem.png',
+          package: 'indian_ocean_plate',
+        ),
         box: _Layout.emblem,
       ),
     ],

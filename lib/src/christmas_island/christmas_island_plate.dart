@@ -9,4 +9,5 @@ export 'src/christmas_island_plates.dart';
 export 'src/christmas_island_serial_generator.dart';
 export 'src/christmas_island_themes.dart';
 export 'src/christmas_island_validators.dart';
-export 'package:plate_alphabet/plate_alphabet.dart' show ChristmasIslandAlphabets;
+export 'package:plate_alphabet/plate_alphabet.dart'
+    show ChristmasIslandAlphabets;

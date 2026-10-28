@@ -6,6 +6,9 @@ import 'package:plate_core/plate_core.dart';
 abstract final class ChristmasIslandSerialGenerator {
   static List<String?> generate(PlateSpec spec, {Random? random}) {
     final Random rnd = random ?? Random();
-    return <String?>['CI', List<String>.generate(4, (_) => '${rnd.nextInt(10)}').join()];
+    return <String?>[
+      'CI',
+      List<String>.generate(4, (_) => '${rnd.nextInt(10)}').join(),
+    ];
   }
 }
