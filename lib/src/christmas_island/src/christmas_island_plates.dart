@@ -176,6 +176,9 @@ abstract final class ChristmasIslandPlates {
     // A crab and whale shark over a sun: an emblem, not boxes and text.
     decals: const <PlateDecal>[
       PlateDecal(
+        // TODO(py): [H2][D6] ImageProvider: reference the raster as package + path; importlib.resources.
+        // TODO(ts): [H2][D6] ImageProvider: reference the raster as package + path; import as asset URL.
+        // TODO(kt): [H2][D6] ImageProvider: reference the raster as package + path; Res/compose resources.
         image: AssetImage(
           'assets/christmas_island/ci_emblem.png',
           package: 'indian_ocean_plate',
