@@ -1,7 +1,7 @@
 name: indian_ocean_plate
 description: "Licence plates for indian ocean members, for the plate_core library."
 version: 0.1.0
-repository: https://github.com/ArAd1Beyranvand/indian_ocean_plate
+repository: https://github.com/ArAd1Beyranvand/indian_ocean_plate/tree/main/flutter
 resolution: workspace
 
 environment:
