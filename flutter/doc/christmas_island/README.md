@@ -6,7 +6,7 @@ GO VEGAN 🌱
 
 From the mighty people of Iran to the people of Christmas Island to view examples:
 
-https://platexample.ir/#/discover/christmasisland
+https://platexample.ir/#/discover/christmasisland:flutter
 
 # christmas_island_plate
 

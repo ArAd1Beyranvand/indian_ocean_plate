@@ -8,7 +8,18 @@ GO VEGAN 🌱
 
 Licence plates for indian ocean members, for the plate_core library.
 
-## Install
+## Languages
+
+| Language | Folder | Example |
+| --- | --- | --- |
+| Flutter / Dart | [`flutter/`](https://github.com/ArAd1Beyranvand/indian_ocean_plate/tree/main/flutter) | — |
+| Kotlin | [`kotlin/`](https://github.com/ArAd1Beyranvand/indian_ocean_plate/tree/main/kotlin) | — |
+| Python | [`python/`](https://github.com/ArAd1Beyranvand/indian_ocean_plate/tree/main/python) | — |
+| TypeScript | [`typescript/`](https://github.com/ArAd1Beyranvand/indian_ocean_plate/tree/main/typescript) | — |
+
+## Quick start
+
+### Install
 
 ```yaml
 dependencies:
@@ -16,7 +27,7 @@ dependencies:
   indian_ocean_plate: ^0.1.0
 ```
 
-## Use
+### Use
 
 ```dart
 import 'package:plate_core/plate_core.dart';
@@ -31,18 +42,23 @@ PlateCanvas(
 );
 ```
 
-## Contains
+## Specs
 
-- `ChristmasIslandCountry` — country panel: `christmas_island`.
-- `CocosKeelingIslandsCountry` — country panel: `cocos_keeling_islands`.
-- `ChristmasIslandPlates` — 2 plate specs: `standard`, `yellow`.
-- `CocosKeelingIslandsPlates` — 1 plate spec: `general`.
-- `ChristmasIslandThemes` — 2 themes: `standard`, `yellow`.
-- `CocosKeelingIslandsThemes` — 1 theme: `general`.
-- `ChristmasIslandValidator` — advisory validator; flags the frame, never blocks a keystroke.
-- `CocosKeelingIslandsValidator` — advisory validator; flags the frame, never blocks a keystroke.
-- `ChristmasIslandSerialGenerator` — random plate generator.
-- 1 bundled asset (``).
+Each spec is one plate layout.
+
+- none listed
+
+## Themes
+
+- none listed
+
+## Change it
+
+`PlateCanvas` takes `spec:` (an entry of `None`) and `theme:` (an entry of `None`).
+
+## Also included
+
+- none
 
 ## Plates
 
@@ -66,3 +82,6 @@ Israel-specific value.
 
 Painted by [`plate_core`](https://pub.dev/packages/plate_core); alphabets shared through [`plate_alphabet`](https://pub.dev/packages/plate_alphabet); optional character picker in [`plate_keypad`](https://pub.dev/packages/plate_keypad).
 
+## License
+
+See [LICENSE](https://github.com/ArAd1Beyranvand/indian_ocean_plate/blob/main/LICENSE).

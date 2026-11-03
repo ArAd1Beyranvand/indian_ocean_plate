@@ -6,7 +6,7 @@ GO VEGAN 🌱
 
 From the mighty people of Iran to the people of Cocos (Keeling) Islands to view examples:
 
-https://platexample.ir/#/discover/cocoskeelingislands
+https://platexample.ir/#/discover/cocoskeelingislands:flutter
 
 # cocos_keeling_islands_plate
 

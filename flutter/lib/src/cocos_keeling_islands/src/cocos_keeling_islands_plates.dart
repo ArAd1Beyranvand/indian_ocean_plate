@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/widgets.dart';
 import 'package:plate_alphabet/plate_alphabet.dart';
 import 'package:plate_core/plate_core.dart';
@@ -21,8 +19,7 @@ import 'cocos_keeling_islands_country.dart';
 /// ink is ~75% of the reference. The caption is 16, ink ~8.6 of 10.3 and
 /// narrow enough to stay between the frame lines.
 abstract final class _Layout {
-  static const double width = 372, height = 134;
-  static const double box = 118, cy = 68;
+  static const double width = 372, height = 134, box = 118, cy = 68;
   static const double letterLeft = 44, letterRight = 82;
   static const double serialLeft = 220, serialRight = 355;
   static const double diamondCx = 156, diamondCy = 57;
@@ -43,8 +40,6 @@ abstract final class CocosKeelingIslandsPlates {
     country: CocosKeelingIslandsCountry.cocos_keeling_islands,
     canvasWidth: _Layout.width,
     canvasHeight: _Layout.height,
-    panel: const PlatePanel(box: PlateBox(0, 0, 0, 0)),
-    noPanel: true,
     slots: <PlateSlot>[
       _field(
         CocosKeelingIslandsAlphabets.letters,
@@ -59,16 +54,13 @@ abstract final class CocosKeelingIslandsPlates {
         3,
       ),
     ],
-    textGroups: const <PlateTextGroup>[
-      PlateTextGroup(<int>[0], key: 'letters'),
-      PlateTextGroup(<int>[1], key: 'serial'),
-    ],
+    textGroups: PlateTextGroup.perSlot(<String>['letters', 'serial']),
     labels: const <PlateLabel>[
       PlateLabel(
         text: 'COCOS (KEELING) ISLANDS',
-        box: PlateBox(
-          _Layout.captionCx - _Layout.captionW / 2,
-          _Layout.captionCy - _Layout.captionBox / 2,
+        box: PlateBox.centered(
+          _Layout.captionCx,
+          _Layout.captionCy,
           _Layout.captionW,
           _Layout.captionBox,
         ),
@@ -108,15 +100,12 @@ abstract final class CocosKeelingIslandsPlates {
     double left,
     double right,
     int length,
-  ) => PlateSlot(
-    alphabet: alphabet,
-    box: PlateBox(
-      left,
-      _Layout.cy - _Layout.box / 2,
-      right - left,
-      _Layout.box,
-    ),
-    length: length,
-    spacing: max(0, (right - left) / length - 0.6 * 0.72 * _Layout.box),
+  ) => plateRun(
+    alphabet,
+    length,
+    left: left,
+    top: _Layout.cy - _Layout.box / 2,
+    pitch: (right - left) / length,
+    height: _Layout.box,
   );
 }

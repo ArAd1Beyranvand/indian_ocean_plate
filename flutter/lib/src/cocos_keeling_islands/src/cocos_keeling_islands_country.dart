@@ -8,7 +8,6 @@ import 'cocos_keeling_islands_colors.dart';
 abstract final class CocosKeelingIslandsCountry {
   static const PlateCountry cocos_keeling_islands = PlateCountry(
     code: 'cc',
-    captionLines: <String>[],
     panelColor: CocosKeelingIslandsColors.field,
     panelTextColor: CocosKeelingIslandsColors.ink,
   );

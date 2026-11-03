@@ -8,7 +8,6 @@ import 'christmas_island_colors.dart';
 abstract final class ChristmasIslandCountry {
   static const PlateCountry christmas_island = PlateCountry(
     code: 'cx',
-    captionLines: <String>[],
     panelColor: ChristmasIslandColors.panel,
     panelTextColor: ChristmasIslandColors.white,
   );

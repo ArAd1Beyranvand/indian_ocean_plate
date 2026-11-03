@@ -1,15 +1,9 @@
 import 'package:plate_core/plate_core.dart';
 
-// TODO(py): [D4-code] hand-port; reason strings are the contract, keep them byte-identical.
-// TODO(ts): [D4-code] hand-port; reason strings are the contract, keep them byte-identical.
-// TODO(kt): [D4-code] hand-port; reason strings are the contract, keep them byte-identical.
 /// Judges a plate by its groups: `letters` (one, `C`) and `serial` (three
 /// digits), `C 400`. Reports, never bars a keystroke.
 class CocosKeelingIslandsValidator extends GatedPlateValidator {
-  const CocosKeelingIslandsValidator();
-
-  @override
-  String get gateGroup => 'serial';
+  const CocosKeelingIslandsValidator() : super('serial');
 
   static const String reasonLetters = 'The register is the letter C.';
   static const String reasonSerial = 'The number is three digits.';

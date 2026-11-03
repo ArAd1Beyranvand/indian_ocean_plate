@@ -25,36 +25,24 @@ import 'christmas_island_country.dart';
 /// **Fields, not cells.** `CI` is one slot and the four digits another; the
 /// fonts' advance is already wider than the printed pitch, so `spacing` is 0.
 abstract final class _Layout {
-  static const double width = 372;
-  static const double height = 134;
+  static const double width = 372, height = 134;
 
-  static const double gSlotHeight = 112;
-  static const double gSlotTop = 72 - gSlotHeight / 2;
-  static const double gLettersLeft = 27.2;
-  static const double gLettersWidth = 113 - 27.2;
-  static const double gDigitsLeft = 169;
-  static const double gDigitsWidth = 356.2 - 169;
-  static const double diamondCentre = 141;
-  static const double diamondSize = 30;
+  static const double gSlotHeight = 112, gSlotTop = 72 - gSlotHeight / 2;
+  static const double gLettersLeft = 27.2, gLettersWidth = 113 - 27.2;
+  static const double gDigitsLeft = 169, gDigitsWidth = 356.2 - 169;
+  static const double diamondCentre = 141, diamondSize = 30;
 
-  static const double ySlotHeight = 104;
-  static const double ySlotTop = 69.25 - ySlotHeight / 2;
-  static const double yLettersLeft = 16.5;
-  static const double yLettersWidth = 95 - 16.5;
-  static const double yDigitsLeft = 204;
-  static const double yDigitsWidth = 357 - 204;
+  static const double ySlotHeight = 104, ySlotTop = 69.25 - ySlotHeight / 2;
+  static const double yLettersLeft = 16.5, yLettersWidth = 95 - 16.5;
+  static const double yDigitsLeft = 204, yDigitsWidth = 357 - 204;
 
   /// Caption ink 16.3 tall → glyph 16.3 / 0.55; centred at y 17.35, x 185.
-  static const double captionGlyph = 29.6;
-  static const double captionCentreY = 17.35;
-  static const double captionCentreX = 185;
-  static const double captionWidth = 260;
+  static const double captionGlyph = 29.6, captionCentreY = 17.35;
+  static const double captionCentreX = 185, captionWidth = 260;
 
   /// Bottom line ink 13.5 tall → 24.5; centred at y 115.25, x 186.
-  static const double bottomGlyph = 24.5;
-  static const double bottomCentreY = 115.25;
-  static const double bottomCentreX = 186;
-  static const double bottomWidth = 270;
+  static const double bottomGlyph = 24.5, bottomCentreY = 115.25;
+  static const double bottomCentreX = 186, bottomWidth = 270;
 
   /// Emblem crop of the flattened photo (x 100..190, y 28..108).
   static const PlateBox emblem = PlateBox(100, 28, 90, 80);
@@ -69,10 +57,10 @@ abstract final class _Layout {
 /// Not implemented: the 1972 series (white-on-blue, `CHRISTMAS ISLAND` over
 /// up to three digits) — superseded, current series since 2003.
 abstract final class ChristmasIslandPlates {
-  static const List<PlateTextGroup> _groups = <PlateTextGroup>[
-    PlateTextGroup(<int>[0], key: 'letters'),
-    PlateTextGroup(<int>[1], key: 'serial'),
-  ];
+  static final List<PlateTextGroup> _groups = PlateTextGroup.perSlot(<String>[
+    'letters',
+    'serial',
+  ]);
 
   static PlateSlot _letters(double left, double width, double top, double h) =>
       PlateSlot(
@@ -124,9 +112,9 @@ abstract final class ChristmasIslandPlates {
     labels: <PlateLabel>[
       PlateLabel(
         text: '◆',
-        box: PlateBox(
-          _Layout.diamondCentre - _Layout.diamondSize / 2,
-          72 - _Layout.diamondSize / 2,
+        box: PlateBox.centered(
+          _Layout.diamondCentre,
+          72,
           _Layout.diamondSize,
           _Layout.diamondSize,
         ),
@@ -176,9 +164,6 @@ abstract final class ChristmasIslandPlates {
     // A crab and whale shark over a sun: an emblem, not boxes and text.
     decals: const <PlateDecal>[
       PlateDecal(
-        // TODO(py): [H2][D6] ImageProvider: reference the raster as package + path; importlib.resources.
-        // TODO(ts): [H2][D6] ImageProvider: reference the raster as package + path; import as asset URL.
-        // TODO(kt): [H2][D6] ImageProvider: reference the raster as package + path; Res/compose resources.
         image: AssetImage(
           'assets/christmas_island/ci_emblem.png',
           package: 'indian_ocean_plate',
