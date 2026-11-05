@@ -1,4 +1,4 @@
-import { PlateCheck, RuledPlateValidator } from '../../core/validators/plate_validator';
+import { PlateCheck, RuledPlateValidator } from 'plate_core/core/validators/plate_validator';
 
 /** Judges a `CI•1234` value: a two-letter register then a four-digit serial
  * (leading zeros are printed). Reports, never bars a keystroke. */
